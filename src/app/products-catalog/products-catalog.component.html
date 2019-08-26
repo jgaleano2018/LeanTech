@@ -1,0 +1,26 @@
+<p>
+    Products Catalog
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Ubication</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let product of productsModel; index as productId">
+        <tr>
+            <td class="td-tb-prod-detail">{{ product.ubication }}</td>
+            <td class="td-tb-prod-detail">{{ product.product }}</td>
+            <td class="td-tb-prod-detail">{{ product.price | currency }}</td>
+            <td class="td-tb-prod-detail">
+                <span contenteditable="true" (keyup)="changeValue(productId, 'quantity', $event)" (blur)="updateList(productId, 'quantity', $event)">{{product.quantity}}</span>
+            </td>
+            <td class="td-tb-prod-detail"><a [routerLink]="['/productsList', productId]" routerLinkActive="active">+</a></td>
+        </tr>
+    </tbody>
+</table>

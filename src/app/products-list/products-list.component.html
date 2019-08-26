@@ -1,0 +1,193 @@
+<h2>Products</h2>
+
+<div class="wrapper">
+    <!--<div class="sidebar" data-color="white" data-active-color="danger">
+        <div class="card-body all-icons">
+            <div id="icons-wrapper">-->
+
+    <div class="navbar-fixed-left pg-prod-list">
+        <div class="tb-prod-list-mnu">
+            <section>
+                <table class="table table-striped tb-prod-list">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-prod-list"><i class="material-icons">lightbulb_outline</i></td>
+                            <td>
+                                <label>Smart Filters</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i class="material-icons">local_grocery_store</i></td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" mat-raised-button (click)="counter('increment')">+
+                                          </button>
+                                        </td>
+                                        <td class="center-input">
+                                            <input matInput name="counter" type="text" size="2" min="0" [(ngModel)]="test.value" readonly required>
+                                        </td>
+                                        <td>
+                                            <button type="button" mat-raised-button (click)="counter('decrement')" [disabled]="count < 1">-
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i class="material-icons">today</i></td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" mat-raised-button (click)="counter('increment')">+
+                                              </button>
+                                        </td>
+                                        <td class="center-input">
+                                            <input matInput name="counter" type="text" size="2" min="0" [(ngModel)]="test.value" readonly required>
+                                        </td>
+                                        <td>
+                                            <button type="button" mat-raised-button (click)="counter('decrement')" [disabled]="count < 1">-
+                                                </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><i class="material-icons">favorite_border</i></td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <button type="button" mat-raised-button (click)="counter('increment')">+
+                                                  </button>
+                                        </td>
+                                        <td class="center-input">
+                                            <input matInput name="counter" type="text" size="2" min="0" [(ngModel)]="test.value" readonly required>
+                                        </td>
+                                        <td>
+                                            <button type="button" mat-raised-button (click)="counter('decrement')" [disabled]="count < 1">-
+                                                    </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <label>_______________</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <label>Status</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="ph-gd-prod-list2">
+                                    <input type="text" class="form-control ph-gd-prod-list3" id="search" name="search" minlength="30" placeholder="Search">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <div class="pg-prod-list div-grid-prod-list">
+        <div class="ph-gd-prod-list">
+            <input type="text" class="form-control" id="search" name="search" minlength="50" placeholder="Search">
+        </div>
+        <div class="tb-prod-list">
+            <div *ngFor="let product of productsList; index as productId">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="tb-div-a-confirm-prod-list">✔</div>
+                            </td>
+                            <td class="td-tb-prod-list-c1">{{ objDate | date :'medium' }}</td>
+                            <td class="td-tb-prod-list-c2" [routerLink]="['/productsModel', productId]">{{ product.ubication }}</td>
+                            <td class="td-tb-prod-list-c3"><i class="material-icons">local_shipping</i></td>
+                            <td class="td-tb-prod-list-c3">{{ product.price | currency }}</td>
+                            <td class="td-tb-prod-list-c3">
+                                <div class="div-quantity">{{ product.quantity }}</div>
+                            </td>
+                            <!--<td>
+                                <app-product-alerts [product]="product" (notify)="onNotify()">
+                                </app-product-alerts>
+                            </td>-->
+                            <td class="td-tb-prod-list-c6"><a [routerLink]="['/productsModel', productId]" routerLinkActive="active">...</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--<button (click)="share()">
+                +
+            </button>-->
+            <!--<button (click)="addToShopp(product)">+</button>-->
+            <div class="tb-div-a-prod-list">
+                <div class="tb-a-prod-list">
+                    <nav>
+                        <a routerLink="/catalog" routerLinkActive="active">+</a>
+                    </nav>
+                </div>
+            </div>
+            <!--<p>{{mensaje}}</p>-->
+
+        </div>
+    </div>
+</div>

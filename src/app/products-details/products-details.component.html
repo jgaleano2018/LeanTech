@@ -1,0 +1,40 @@
+<h2>Product Details</h2>
+
+<!--<div *ngIf="product">
+    <div>
+        <label>Date of Purchase:    </label>
+        <h3>{{ product.datePurchase }}</h3>
+    </div>
+    <label>Ubication:    </label>
+    <h3>{{ product.ubication }}</h3>
+    <h3>{{ product.product }}</h3>
+    <h4>{{ product.price | currency }}</h4>
+    <h4>{{ product.quantity }}</h4>
+</div>-->
+
+<div class="container" *ngIf="product">
+    <form>
+        <div class="form-group">
+            <label>Date of Purchase</label>
+            <h5>{{ product.datePurchase }}</h5>
+        </div>
+        <div class="form-group">
+            <label>Ubication</label>
+            <h5>{{ product.ubication }}</h5>
+        </div>
+        <div class="form-group">
+            <label>Product</label>
+            <h5>{{ product.product }}</h5>
+        </div>
+        <div class="form-group">
+            <label>Price</label>
+            <h5>{{ product.price }}</h5>
+        </div>
+        <div class="form-group">
+            <label>Quantity</label>
+            <h5>{{ product.quantity }}</h5>
+        </div>
+
+        <button type="submit" class="btn btn-success">Exit</button>
+    </form>
+</div>
